@@ -5,7 +5,6 @@ This repository presents an applied machine learning analysis of historical stoc
 The work is implemented as a single end-to-end Jupyter notebook and was developed as a final project for an MBA-level Machine Learning for Finance course.
 
 
-
 ## Project Objective
 
 The goal of this project is to evaluate whether basic machine learning classifiers can improve upon a traditional technical trading rule (Bollinger Bands) when predicting short-term stock price movements.
@@ -20,7 +19,7 @@ The prediction task is framed as a **binary classification problem**:
 - **Asset:** Apple Inc. (AAPL)
 - **Source:** Yahoo Finance
 - **Frequency:** Daily historical data
-- **Variables include:** Open, High, Low, Close prices, Volume
+- **Variables include:** Open, High, Low, Close prices
 
 The dataset is processed to compute returns and commonly used technical indicators.
 
@@ -38,12 +37,10 @@ The following features are constructed from price data:
 These indicators serve as inputs to the machine learning models.
 
 
-
 ## Baseline Strategy
 
 A **Bollinger Bands trading rule** is used as a baseline strategy.  
 This provides a traditional technical analysis benchmark against which machine learning models are compared.
-
 
 
 ## Machine Learning Models
@@ -80,7 +77,6 @@ Performance metrics include:
 - Sharpe-like ratio (mean / standard deviation)
 
 
-
 ## Key Results (Test Period)
 
 | Strategy | Total Return | Sharpe-like Ratio |
@@ -94,24 +90,24 @@ Performance metrics include:
 Logistic Regression improves upon the Bollinger Bands strategy and KNN in this sample period, though it does not outperform buy-and-hold in terms of total return.
 
 
-
 ## Repository Contents
 
 ```text
 ml-finance-stock-analysis/
-├── Arindam_Project.ipynb   # Main analysis notebook
-├── AAPL Yahoo.csv          # Historical AAPL price data (Yahoo Finance)
-└── README.md               # Project documentation
-
+├── data/
+│   └── AAPL Yahoo.csv          # Historical AAPL price data (Yahoo Finance)
+├── code/
+│   └── Arindam_Project.ipynb   # Main analysis notebook
+└── README.md                   # Project documentation
+```
 
 
 
 ## How to Use
 
-- Open `Arindam_Project.ipynb` in Jupyter Notebook or Google Colab
+- Open `code/Arindam_Project.ipynb` in Jupyter Notebook or Google Colab
 - Run all cells sequentially to reproduce the analysis and results
 - The notebook contains all data preprocessing, modeling, and evaluation steps
-
 
 
 ## Limitations
@@ -120,7 +116,6 @@ ml-finance-stock-analysis/
 - Results are sample-period dependent
 - Cross-validation uses standard K-Fold rather than time-series-specific splits
 - No transaction costs or slippage are modeled
-
 
 
 ## Disclaimer
